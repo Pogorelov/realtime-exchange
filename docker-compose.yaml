@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+
+  postgresql:
+    restart: always
+    image: postgres:10
+    container_name: postgres-local
+    hostname: postgres-local
+    command: postgres -c 'max_connections=200'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Abcd1234
+    ports:
+      - 5432:5432
+    networks:
+      - rate_exchange_net
+
+networks:
+  rate_exchange_net:
+    driver: bridge
+
+volumes:
+  mongo_vol:
+    driver: local

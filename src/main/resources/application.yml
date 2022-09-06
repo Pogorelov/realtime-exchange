@@ -1,0 +1,30 @@
+spring:
+  r2dbc:
+    url: ${DB_URL:r2dbc:postgresql:failover://localhost:5432}/rate_exchange
+    username: ${DB_USER:postgres}
+    password: ${DB_USER:Abcd1234}
+  flyway:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432}/rate_exchange
+    user: ${DB_USER:postgres}
+    password: ${DB_USER:Abcd1234}
+    enabled: true
+    validate-on-migrate: true
+    locations: classpath:db/migration
+
+bank:
+  api:
+    url: https://pogorelomonocurrency.free.beeceptor.com/bank/currency
+#    url: https://api.monobank.ua
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: ${CONNECT_TIMEOUT:5000}
+        readTimeout: ${READ_TIMEOUT:5000}
+        loggerLevel: ${FEIGN_LOG_LEVEL:basic}
+
+logging:
+  level:
+    io.r2dbc.postgresql.QUERY: DEBUG # for queries
+    io.r2dbc.postgresql.PARAM: DEBUG # for parameters

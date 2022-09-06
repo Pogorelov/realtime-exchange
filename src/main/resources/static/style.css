@@ -1,0 +1,45 @@
+.rate-widget {
+  border: 1px solid #e0e0e0;
+  background: #f9f7f7;
+  width: 400px;
+  display: inline-block;
+  margin-right: 8px;
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.rate-widget h1 {
+  font-size: 18px;
+  color: #0105e2;
+}
+
+.rate-widget h2 {
+  font-size: 14px;
+  margin: 0px;
+}
+
+.rate-widget .current-price {
+  color: #c7c300;
+  font-weight: bold;
+  font-size: 50px;
+  float: right;
+  display: inline-block;
+}
+
+.rate-widget .currency-symbol {
+  font-size: 60%;
+}
+
+p {
+  font-weight: bold;
+  background-color: #ffff6d;
+  font-weight: italic;
+}
+
+pre {
+  border: 1px solid #e0e0e0;
+  background: #f9f7f7;
+  padding: 4px 8px;
+  margin-top: 0px;
+}
